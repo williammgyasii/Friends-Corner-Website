@@ -1,0 +1,19 @@
+name: Release
+
+# Publishing a GitHub Release is the approval to ship friendscorner.app.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-marketing-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/website-cd.yml
+    secrets: inherit

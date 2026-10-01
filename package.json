@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --experimental-strip-types --test test/pricing.test.ts",
     "dev:vinext": "vite dev --port 3001",
     "build:vinext": "vite build",
     "start:vinext": "vite preview",
@@ -14,6 +15,8 @@
   },
   "dependencies": {
     "@vinext/cloudflare": "^1.0.0",
+    "lenis": "^1.3.26",
+    "motion": "^13.4.6",
     "next": "16.3.8",
     "react": "19.2.8",
     "react-dom": "19.2.8",
